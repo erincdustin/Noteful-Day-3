@@ -16,7 +16,7 @@ export default class AddFolder extends React.Component {
       value: '',
       nameValid: false,
       validationMessages: {
-        name: 'Name is Required',
+        name: '',
       },
     }
   }
