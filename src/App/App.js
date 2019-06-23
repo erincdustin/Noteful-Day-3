@@ -66,7 +66,7 @@ class App extends Component {
         return (
             <>
                 <ErrorPage>
-                {['/', '/folder/:folderId'].map(path => (
+                {['/', '/folders/:folderId'].map(path => (
                     <Route
                         exact
                         key={path}
@@ -74,7 +74,7 @@ class App extends Component {
                         component={NoteListNav}
                     />
                 ))}
-                <Route path="/note/:noteId" component={NotePageNav} />
+                <Route path="/notes/:noteId" component={NotePageNav} />
                 <Route path="/add-folder" component={AddFolder} />
                 <Route path="/add-note" component={AddNote} />
                 </ErrorPage>
@@ -86,7 +86,7 @@ class App extends Component {
         return (
             <>
               <ErrorPage>
-                {['/', '/folder/:folderId'].map(path => (
+                {['/', '/folders/:folderId'].map(path => (
                     <Route
                         exact
                         key={path}
@@ -94,7 +94,7 @@ class App extends Component {
                         component={NoteListMain}
                     />
                 ))}
-                <Route path="/note/:noteId" component={NotePageMain} />
+                <Route path="/notes/:noteId" component={NotePageMain} />
               </ErrorPage>
             </>
         );

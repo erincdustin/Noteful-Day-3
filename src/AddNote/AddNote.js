@@ -27,9 +27,9 @@ export default class AddFolder extends React.Component {
     console.log(e.target.addNoteName.value, e.target.addNoteContent.value, e.target.addNoteFolder.value)
     const name = e.target.addNoteName.value;
     const content = e.target.addNoteContent.value;
-    const currentDate = new Date();
-    const folderId = e.target.addNoteFolder.value;
-    console.log(currentDate);
+    const modified = Date.now();
+    const folderid = e.target.addNoteFolder.value;
+    console.log(modified);
 
     
     fetch(`${config.API_ENDPOINT}/notes`, {
@@ -40,8 +40,8 @@ export default class AddFolder extends React.Component {
       body: JSON.stringify({
         id: cuid(),
         name: name,
-        modified: currentDate,
-        folderId,
+        modified,
+        folderid,
         content: content
       })
     })
