@@ -2,7 +2,8 @@ import React from 'react';
 import config from '../config';
 import cuid from 'cuid';
 import ApiContext from '../ApiContext';
-// import ValidationError from '../ValidationError/ValidationError';
+
+import './AddNote.css';
 
 
 export default class AddFolder extends React.Component {
@@ -100,7 +101,7 @@ export default class AddFolder extends React.Component {
            this.handleSubmit(e);
            this.props.history.push('/')}}>
           <label htmlFor='addNoteName'>Name of the Note:
-          {!this.state.nameValid && (<div><p>{this.state.validationMessages.name}</p></div>)}</label>
+          {!this.state.nameValid && (<div><p class="error">{this.state.validationMessages.name}</p></div>)}</label>
             <input id='addNoteName' type='text' name='addNoteName' className='addNoteName' onChange={e => this.setName(e.target.value)}></input>
           <label htmlFor='addNoteContent'>Content:</label>
             <input id='addNoteContent' type='addNoteContent' name='addNoteContent' className='addNoteContent'></input>
@@ -108,7 +109,7 @@ export default class AddFolder extends React.Component {
             <select id='addNoteFolder' name='addNoteFolder'>
               {mappedOptions}
             </select>
-          <button type='submit' disabled={!this.state.nameValid}>Create Note</button>
+          <button className="addNoteButton" type='submit' disabled={!this.state.nameValid}>Create Note</button>
         </form>
       </div>
     )

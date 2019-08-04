@@ -3,6 +3,8 @@ import config from '../config';
 import cuid from 'cuid';
 import ApiContext from '../ApiContext';
 
+import './AddFolder.css';
+
 
 export default class AddFolder extends React.Component {
   static contextType = ApiContext;
@@ -10,7 +12,11 @@ export default class AddFolder extends React.Component {
     super(props);
     this.folderName = React.createRef();
     this.state = {
-      name: ''
+      name: '',
+      nameValid: false,
+      validationMessages: {
+        name: '',
+      }
     }
   }
 
@@ -42,19 +48,38 @@ export default class AddFolder extends React.Component {
 
   }
   setName = name => {
-    this.setState({name});
+    this.setState({name}, () => {this.validateName(name)});
   }
 
+  validateName = name => {
+    const validationMessages = {...this.state.validationMessages}
+    let nameValid = true;
+
+    if (name.length === 0) {
+      validationMessages.name = 'Name is required';
+      nameValid = false;
+      // return;
+    } else {
+      validationMessages.name = '';
+      nameValid = true;
+    }
+
+    this.setState({
+      validationMessages,
+      nameValid,
+    })
+  }
   
   render() {
     return(
-      <div className='AddFolderForm'>
+      <div className='addFolderForm'>
         <form onSubmit={e =>{
            this.handleSubmit(e);
            this.props.history.push('/')}}>
-          <label htmlFor='addFolder'>Name of the folder</label>
-          <input id='addFolder' type='text' name='addFolder' className='addFolder'></input>
-          <button type='submit'>Create folder</button>
+          <label htmlFor='addFolder'>Name of the folder
+          {!this.state.nameValid && (<div><p class="error">{this.state.validationMessages.name}</p></div>)}</label>
+          <input id='addFolder' type='text' name='addFolder' className='addFolder' onChange={e => this.setName(e.target.value)}></input>
+          <button className="addFolderButton" type='submit' disabled={!this.state.nameValid}>Create folder</button>
         </form>
       </div>
     )
