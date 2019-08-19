@@ -58,7 +58,7 @@ export default class AddFolder extends React.Component {
     if (name.length === 0) {
       validationMessages.name = 'Name is required';
       nameValid = false;
-      // return;
+      
     } else {
       validationMessages.name = '';
       nameValid = true;

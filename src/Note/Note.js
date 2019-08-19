@@ -14,7 +14,6 @@ export default class Note extends React.Component {
   static contextType = ApiContext;
 
   handleClickDelete = e => {
-    // e.preventDefault()
     const noteId = this.props.id
     console.log(this.props.id)
 

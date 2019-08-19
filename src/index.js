@@ -2,14 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faPlus, faChevronLeft, faTrashAlt, faCheckDouble
+  faPlus, faChevronLeft, faTrashAlt, faCheckDouble, faSpinner
 } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter } from 'react-router-dom'
 import 'typeface-roboto'
 import './index.css'
 import App from './App/App'
 
-library.add(faPlus, faChevronLeft, faTrashAlt, faCheckDouble)
+library.add(faPlus, faChevronLeft, faTrashAlt, faCheckDouble, faSpinner)
 
 ReactDOM.render(
   <BrowserRouter>

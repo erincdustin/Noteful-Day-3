@@ -60,7 +60,6 @@ class App extends Component {
         }, () => {
             console.log(this.state.notes)
         })
-        // this.props.history
     }
 
     renderNavRoutes() {

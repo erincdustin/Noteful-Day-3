@@ -14,6 +14,7 @@ export default class NoteListNav extends React.Component {
     return (
       <div className='NoteListNav'>
         <ul className='NoteListNav__list'>
+          <div className="spinner" ><FontAwesomeIcon className="fa-spin" icon='spinner' /></div>
           {folders.map(folder =>
             <li key={folder.id}>
               <NavLink
@@ -24,7 +25,7 @@ export default class NoteListNav extends React.Component {
                   {countNotesForFolder(notes, folder.id)}
                 </span>
                 {folder.name}
-              </NavLink>
+              </NavLink> 
             </li>
           )}
         </ul>
