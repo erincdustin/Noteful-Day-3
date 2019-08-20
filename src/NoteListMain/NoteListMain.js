@@ -25,7 +25,7 @@ export default class NoteListMain extends React.Component {
     console.log(notesForFolder)
     return (
       <section className='NoteListMain'>
-        <div className="spinner" ><FontAwesomeIcon className="fa-spin" icon='spinner' /></div>
+        <div className="note-spinner" ><FontAwesomeIcon className="fa-spin" icon='spinner' /></div>
         <ul>
           {notesForFolder.map(note =>
             <li key={note.id}>

@@ -11,22 +11,22 @@
   z-index: 2;
 }
 
-.NoteListMain .spinner{
+.NoteListMain .note-spinner{
   --note-height: 88px;
   position: relative;
-  text-align: center;
+  text-align: left;
   font-size: 20px;
   color: #cacaca;
   height: var(--note-height);
   margin-bottom: 8px;
-  width: 70%;
+  width: 380px;
   padding: 8px 0 8px 8px;
   position: absolute;
   z-index: 1;
 }
 
-.spinner svg{
-  margin: auto;
+.note-spinner svg{
+  margin: 10px 20px;
 }
 
 .Note__delete {
