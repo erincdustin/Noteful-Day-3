@@ -47,6 +47,13 @@ class App extends Component {
         });
     };
 
+    handleDeleteFolder = folderId => {
+        console.log(this.state.folders.filter(folder => folder.id !== folderId))
+        this.setState({
+            folders: this.state.folders.filter(folder => folder.id !== folderId)
+        });
+    };
+
     handleAddFolder = folder => {
         this.setState({
             folders: [...this.state.folders, folder]
@@ -105,6 +112,7 @@ class App extends Component {
             notes: this.state.notes,
             folders: this.state.folders,
             deleteNote: this.handleDeleteNote,
+            deleteFolder: this.handleDeleteFolder,
             addFolder: this.handleAddFolder,
             addNote: this.handleAddNote,
         };

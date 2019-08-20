@@ -19,10 +19,14 @@
   color: #cacaca;
   height: var(--note-height);
   margin-bottom: 8px;
-  width: 380px;
+  width: 70%;
   padding: 8px 0 8px 8px;
   position: absolute;
   z-index: 1;
+}
+
+.spinner svg{
+  margin: auto;
 }
 
 .Note__delete {
